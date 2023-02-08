@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <title>Countdown to SSC</title>
+  <meta name="title" content="Countdown to SSC">
+  <meta name="theme-color" content="black">
+  <meta name="description" content="Mitochondria is the powerhouse of the cell?">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ssc-countdown.vercel.app/">
+  <meta property="og:title" content="Countdown to SSC">
+  <meta property="og:description" content="Mitochondria is the powerhouse of the cell?">
+  <meta property="og:image"
+    content="https://cdn.discordapp.com/attachments/994605186708410368/1072808947062411284/3MNDMn52xr677E0yW8z8oAEHOlqSCnepQsWGbIsuzC1OZfxXeg7Ka8G9e9OdVukkz0PXMpqzXEtyEkNYkEOIosJRxT2AbAs1fIyydwIn9AeNICUzqc7JgqWycOLFyXVFvcMRHOoEnOngjK_E-42u0ESGPFKxkzvKX-XVZI-xa9qlal-4j2-UHagw_qF9AYXz9lOW1hjlyeGgXrWeIB46OTN9_7oegMlaojAgDp2w6meTi0d4s5o-oC4p06yg-mlBlLlXpvAdZ0SZkdfou1MMxMI4yzQBxHnt8LKcOrbvsb0zU9YGTT4qsJjrffIFbYBUKGSIl_IY2xGaQu35googO9dMcL5NZtmCOCZfXoP4dQSAaCGNjXYjICUVII5QNGjguwVDWp1LRFRDb5TliFr3T6cd5xqy8qhoy_gNUEro8cy0FJPAXTooMD8FvpAtX1Tqlvdmf39RPAZEVt-gbcsUonsB30oQ5USe1czF1Oq8KOGJwmU_wQy6pECCd6JW..png">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://ssc-countdown.vercel.app/">
+  <meta property="twitter:title" content="Countdown to SSC">
+  <meta property="twitter:description" content="Mitochondria is the powerhouse of the cell?">
+  <meta property="twitter:image"
+    content="https://cdn.discordapp.com/attachments/994605186708410368/1072808947062411284/3MNDMn52xr677E0yW8z8oAEHOlqSCnepQsWGbIsuzC1OZfxXeg7Ka8G9e9OdVukkz0PXMpqzXEtyEkNYkEOIosJRxT2AbAs1fIyydwIn9AeNICUzqc7JgqWycOLFyXVFvcMRHOoEnOngjK_E-42u0ESGPFKxkzvKX-XVZI-xa9qlal-4j2-UHagw_qF9AYXz9lOW1hjlyeGgXrWeIB46OTN9_7oegMlaojAgDp2w6meTi0d4s5o-oC4p06yg-mlBlLlXpvAdZ0SZkdfou1MMxMI4yzQBxHnt8LKcOrbvsb0zU9YGTT4qsJjrffIFbYBUKGSIl_IY2xGaQu35googO9dMcL5NZtmCOCZfXoP4dQSAaCGNjXYjICUVII5QNGjguwVDWp1LRFRDb5TliFr3T6cd5xqy8qhoy_gNUEro8cy0FJPAXTooMD8FvpAtX1Tqlvdmf39RPAZEVt-gbcsUonsB30oQ5USe1czF1Oq8KOGJwmU_wQy6pECCd6JW..png">
+</head>
+
+<body>
+
+  <div>
+    <header></header>
+    <p id="timer">
+      <img src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" alt="Loading..." height="50px">
+    </p>
+    <footer>☢️ created by <a href="https://instagram.com/nehan_yaser/" target="_blank">nehan yaser</a>.</footer>
+  </div>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      font-family: sans-serif;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    p {
+      text-align: center;
+      font-size: 60px;
+      padding: 1rem;
+    }
+
+    p>p {
+      font-size: 45px;
+      padding: 0;
+    }
+
+    span {
+      color: #b700ff;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      font-family: sans-serif;
+    }
+
+    a {
+      font-family: sans-serif;
+    }
+
+    @media only screen and (max-width: 600px) {
+      p {
+        font-size: 40px;
+      }
+
+      p>p {
+        font-size: 30px;
+      }
+    }
+
+    @media only screen and (max-width: 400px) {
+
+      p {
+        font-size: 30px;
+      }
+
+      p>p {
+        font-size: 25px;
+      }
+    }
+  </style>
+
+
+
+  <script>
+    document.querySelector('header').innerHTML = new Date().toLocaleDateString("en-UK");
+
+    const countDownDate = new Date("April 30, 2023 09:00:00").getTime();
+
+    const x = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("timer").innerHTML = "<span>" + days + " days </span>, " + hours + " hours, "
+        + minutes + " minutes and " + seconds + " seconds" + "<p>left till <span>SSC</span>.</p>";
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "SSC exams have begun. <span>Good luck!</span> 🎉";
+      }
+    }, 1000);
+  </script>
+
+</body>
+
+</html>
