@@ -3,7 +3,6 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="logo.png">
   <title>Countdown to SSC</title>
   <meta name="title" content="Countdown to SSC">
   <meta name="theme-color" content="black">
@@ -27,11 +26,18 @@
 <body>
 
   <div>
-    <header></header>
+
     <p id="timer">
       <img src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" alt="Loading..." height="50px">
     </p>
-    <footer>☢️ created by <a href="https://instagram.com/nehan_yaser/" target="_blank">nehan yaser</a>.</footer>
+  </div>
+
+  <footer>
+    ☢️ created by <a href="https://instagram.com/nehan_yaser/" target="_blank">nehan yaser</a>.
+  </footer>
+
+  <div style="background-color: white;">
+    <p class="note" onclick="setNote(navigator.vibrate(300))"></p>
   </div>
 
   <style>
@@ -40,16 +46,8 @@
     * {
       margin: 0;
       padding: 0;
-      background: black;
       color: white;
       font-family: 'Oswald', sans-serif;
-    }
-
-    header {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      font-family: sans-serif;
     }
 
     div {
@@ -57,7 +55,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      height: calc(100vh - 53.6px);
+      background: black;
     }
 
     p {
@@ -76,14 +75,27 @@
     }
 
     footer {
-      position: fixed;
-      bottom: 1rem;
-      left: 1rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 1rem;
       font-family: sans-serif;
+      color: black;
     }
 
     a {
       font-family: sans-serif;
+      color: black;
+    }
+
+    .note {
+      color: black;
+      font-size: 30px;
+    }
+
+    .note:hover {
+      opacity: 0.8;
+      cursor: pointer;
     }
 
     @media only screen and (max-width: 600px) {
@@ -106,13 +118,27 @@
         font-size: 25px;
       }
     }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #d2d2d2;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #b700ff;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #7800a7;
+    }
   </style>
 
 
 
   <script>
-    document.querySelector('header').innerHTML = new Date().toLocaleDateString("en-UK");
-
     const countDownDate = new Date("April 30, 2023 09:00:00").getTime();
 
     const x = setInterval(function () {
@@ -129,6 +155,29 @@
         document.getElementById("timer").innerHTML = "SSC exams have begun. <span>Good luck!</span> 🎉";
       }
     }, 1000);
+
+
+    const notes = [
+      'Mitochondria is the powerhouse of the cell?',
+      'Mallu question manage de.',
+      'Kalke thike. 🙏',
+      'W=Fs',
+      'Me giving the science exam knowing only that mile is a bangladeshi band, ohm is a unit for vape resistance and acid akta bhuter bacha.',
+      'Me going for bangla 2 exam knowing that abbay is my brother\'s name, uddessho is a bangla song and madokashokti is something we have.',
+      'Piracy?',
+      'Me after consuming KMnO<sub style="color: black;">4</sub>.',
+      'I\'ve never seen a batch more chill about boards than batch 23.',
+      'Kalke sick thakbo unfortunately.',
+      'Proud owner of a screw guage.'
+    ]
+
+
+    function setNote() {
+      document.querySelector('.note').innerHTML = notes[Math.floor(Math.random() * notes.length)]
+    }
+
+    setNote()
+
   </script>
 
 </body>
